@@ -120,7 +120,11 @@ def main():
                 else:
                     print("Model does not exist, starting from scratch")
                     model.init_network(hidden_size=50)
-
+            try:
+                e = int(input("Enter Epochs to train for (Default=50): "))
+                model.epochs = e
+            except ValueError:
+                print("Invalid number entered, using default value")
             model.train(x_train, y_train, model_file)
 
             intersections[intersection_idx]['model'] = model_file
@@ -130,7 +134,7 @@ def main():
             # Test Intersections
             model_file = "model/" + sel_intersection + ".hdf"
             if os.path.exists(model_file):
-                model.init_network(model_file)
+                model.load_network(model_file)
                 test_output = model.predict(x_test, y_test)
                 N, S, E, W = confusion_matrix(test_output, y_test, True)
             else:

@@ -47,12 +47,12 @@ def main():
         "Train from file",
     ]
     while True:
+        print("Currently Selected Intersection:", sel_intersection)
         choice = menu.do_menu(main_menu)
         if choice is None:
             return  # Exit main() (and program).
         if choice == 1:
             # Select Intersection
-            print("Currently Selected Intersection:", sel_intersection)
             temp_menu = ["Please Select a New Intersection"]
 
             for line in intersections:

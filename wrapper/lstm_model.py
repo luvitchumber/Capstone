@@ -36,7 +36,7 @@ class LSTMModel:
     def load_network(self, filepath):
         self.model = load_model(filepath, compile=True)
 
-    def init_network(self, hidden_size, activation='sigmoid', optimizer='adam', loss='mean_squared_error'):
+    def init_network(self, hidden_size, activation='sigmoid', optimizer='adam', loss='mean_squared_error', verbose=False):
         self.model = Sequential()
 
         self.model.add(LSTM(units=hidden_size, return_sequences=True, input_shape=(self.input_length, 1)))
@@ -50,8 +50,8 @@ class LSTMModel:
         self.model.add(Dense(units=self.steps, activation=activation))
 
         self.model.compile(optimizer=optimizer, loss=loss)
-
-        print(self.model.summary())
+        if verbose:
+            print(self.model.summary())
 
     def train(self, x_train, y_train, file_loc, validation_split=0.2, save=True):
         check_pointer = ModelCheckpoint(filepath=file_loc, verbose=1)

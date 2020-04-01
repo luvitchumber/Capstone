@@ -47,69 +47,10 @@ def confusion_matrix(predict, actual, Verbose=False):
         actu = actual[i]
         actu = [int(round(a, 0)) for a in actu]
         # print(actu)
-        if (pred[0] == 1):
-            c = 1
-        elif (pred[0] == 2):
-            c = 2
-        else:
-            c = 3
-
-        if (actu[0] == 1):
-            r = 1
-        elif (actu[0] == 2):
-            r = 2
-        else:
-            r = 3
-
-        W[r][c] += 1
-
-        if (pred[1] == 1):
-            c = 1
-        elif (pred[1] == 2):
-            c = 2
-        else:
-            c = 3
-
-        if (actu[1] == 1):
-            r = 1
-        elif (actu[1] == 2):
-            r = 2
-        else:
-            r = 3
-
-        S[r][c] += 1
-
-        if (pred[2] == 1):
-            c = 1
-        elif (pred[2] == 2):
-            c = 2
-        else:
-            c = 3
-
-        if (actu[2] == 1):
-            r = 1
-        elif (actu[2] == 2):
-            r = 2
-        else:
-            r = 3
-
-        N[r][c] += 1
-
-        if (pred[3] == 1):
-            c = 1
-        elif (pred[3] == 2):
-            c = 2
-        else:
-            c = 3
-
-        if (actu[3] == 1):
-            r = 1
-        elif (actu[3] == 2):
-            r = 2
-        else:
-            r = 3
-
-        E[r][c] += 1
+        W[actu[0]][pred[0]] += 1
+        S[actu[1]][pred[1]] += 1
+        N[actu[2]][pred[2]] += 1
+        E[actu[3]][pred[3]] += 1
 
     N[0][0] = ''
     N[0][1] = 'p Low'

@@ -1,0 +1,7 @@
+name,street,dataset,model,long,lat
+2922, Elizabeth and LaTrobe St, data/2922.csv,,144.96129,-37.81034
+2924, Willams St and LaTrobe St,data/2924.csv,,144.95642,-37.81174
+4580, Elizabeth St and Collins St,data/4580.csv,,144.964018,-37.81622
+4589, Elizabeth St and Little Collins St,data/4589.csv,model/4589.hdf,144.96354,-37.81525
+4591, William St and Little Collins St,data/4591.csv,,144.95866,-37.81105
+4600, William St and Bourke St, data/4600.csv,,144.9583,-37.81571

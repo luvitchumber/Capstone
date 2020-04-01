@@ -12,6 +12,7 @@ def preprocessing(df, events=True, verbose=False):
     features = df.iloc[:, features_idx]
     labels = df.iloc[:, labels_idx]
     if events:
+        # TODO: update logic to drop last 2 columns
         features = df.iloc[:, features_idx_events]
 
     if verbose:

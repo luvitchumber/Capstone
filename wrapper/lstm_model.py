@@ -36,8 +36,7 @@ class LSTMModel:
     def load_network(self, filepath):
         self.model = load_model(filepath, compile=True)
 
-    # ** can change the below to relu for activation
-    def init_network(self, hidden_size, activation='softmax', optimizer='adam', loss='mean_squared_error', bidirectional=False):
+    def init_network(self, hidden_size, activation='sigmoid', optimizer='adam', loss='mean_squared_error'):
         self.model = Sequential()
 
         self.model.add(LSTM(units=hidden_size, return_sequences=True, input_shape=(self.input_length, 1)))
@@ -48,7 +47,7 @@ class LSTMModel:
 
         self.model.add(LSTM(units=hidden_size))
 
-        self.model.add(Dense(units=self.steps))
+        self.model.add(Dense(units=self.steps, activation=activation))
 
         self.model.compile(optimizer=optimizer, loss=loss)
 

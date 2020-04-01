@@ -13,21 +13,17 @@ def get_dataset(sel_intersection, intersections):
     return df
 
 
-def train(model, x_train, y_train, model_file):
-    model.train(x_train, y_train, model_file, save=True)
-
-
 def main():
     """Program execution starts here."""
     intersections = read_intersections("intersections.data")
     #sel_intersection = intersections[0]['name']
     sel_intersection = "4589"
-    df = get_dataset(sel_intersection, intersections)
 
+    df = get_dataset(sel_intersection, intersections)
     x_train, x_test, y_train, y_test = preprocessing(df)
+
     model = LSTMModel(x_train.shape[1], y_train.shape[1])
     model_file = search(intersections, 'name', sel_intersection)
-
 
     main_menu = [
         "CAPSTONE TRAFFIC PREDICTION",
@@ -46,6 +42,7 @@ def main():
         "Train from scratch",
         "Train from file",
     ]
+
     while True:
         print("Currently Selected Intersection:", sel_intersection)
         choice = menu.do_menu(main_menu)

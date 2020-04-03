@@ -10,7 +10,8 @@ import re
 def get_dataset(sel_intersection, intersections):
 	intersection_file = search(intersections, 'name', sel_intersection)
 	intersection_file = intersections[intersection_file]['dataset']
-	df = pd.read_csv('./'+intersection_file)
+	# there is a blank line at the beginning of the file path causing an error
+	df = pd.read_csv(intersection_file[1:])
 	return df
 
 

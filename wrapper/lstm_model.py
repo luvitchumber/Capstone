@@ -23,7 +23,7 @@ class LSTMModel:
 			for i in range(len(intersection_list)): 
 				self.intersections.append(int(intersection_list[i]))
 			self.multi_model = True
-			load_model()
+			load_network()
 			
 
 	def get_batch(self, x_data, y_data):

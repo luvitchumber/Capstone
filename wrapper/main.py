@@ -156,10 +156,10 @@ def main():
 			flag = 0
 			while flag == 0:
 				num_inter = input("Please enter intersection number:")
-				num_inter = int(num_inter)
+				
 				if num_inter in sel_intersection:
 					flag = 1
-					x_data.append(num_inter)
+					x_data.append(int(num_inter))
 				else:
 					print("Intersection not found!")
 					

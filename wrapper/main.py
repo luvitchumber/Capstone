@@ -211,6 +211,6 @@ def main():
 					print("Season not found!")
 					
 			res = model.predict([x_data])
-			print("Prediction: " + res)
+			print("Prediction: " + str(res))
 			
 main()

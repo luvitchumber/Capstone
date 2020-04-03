@@ -11,7 +11,7 @@ import sys
 def get_dataset(sel_intersection, intersections):
 	intersection_file = search(intersections, 'name', sel_intersection)
 	intersection_file = intersections[intersection_file]['dataset']
-	df = pd.read_csv(intersection_file)
+	df = pd.read_csv(intersection_file.strip(' '))
 	return df
 
 
@@ -21,7 +21,7 @@ def main():
 	intersection_list = []
 	
 	for i in range(len(intersections)):
-		intersection_list.append(intersections[i]['name'])
+		intersection_list.append(intersections[i]['name'].strip(' '))
 		
 	#we need a way to choose which intersection is selected. please edit
 	# when selecting from intersections
@@ -160,7 +160,7 @@ def main():
 			season=[1,2,3,4]
 			time_str = ''
 			flag = 0
-			'''while flag == 0:
+			while flag == 0:
 				num_inter = input("Please enter intersection number: ")
 				if num_inter in intersection_list:
 					flag = 1
@@ -180,7 +180,7 @@ def main():
 				else:
 					print("Day of the week not found!")
 			
-			flag = 0'''
+			flag = 0
 			while flag == 0:
 				time_day = input("Please enter the time of the day (ex. 17:30): ")
 				temp = time_day.split(':')

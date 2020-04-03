@@ -34,8 +34,7 @@ class LSTMModel:
         save_model(self.model, filepath, overwrite=True, include_optimizer=True)
 
     def load_network(self, filepath):
-		self.model = keras.models.load_model(filepath)
-	
+	    self.model = keras.models.load_model(filepath)
 	
     def init_network(self, hidden_size, activation='linear', optimizer='adam', loss='mean_squared_error', verbose=False):
         self.model = Sequential()

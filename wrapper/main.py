@@ -159,10 +159,9 @@ def main():
 			day_week = [1,2,3,4,5,6,7]
 			season=[1,2,3,4]
 			time_str = ''
-			flag = 0
+			'''flag = 0
 			while flag == 0:
-				num_inter = input("Please enter intersection number:")
-				print(intersection_list)
+				num_inter = input("Please enter intersection number: ")
 				if num_inter in intersection_list:
 					flag = 1
 					x_data.append(int(num_inter))
@@ -172,7 +171,7 @@ def main():
 			flag = 0
 			while flag == 0:
 				week = [0,0,0,0,0,0,0]
-				num_day = input("Please enter the day of the week:\nOptions:\n1:Sunday\n2:Monday\n3:Tuesday\n4:Wednesday\n5:Thursday\n6:Friay\n7:Saturday")
+				num_day = input("Please enter the day of the week:\nOptions:\n1:Sunday\n2:Monday\n3:Tuesday\n4:Wednesday\n5:Thursday\n6:Friay\n7:Saturday\n")
 				num_day = int(num_day)
 				if num_day in day_week:
 					flag = 1
@@ -181,11 +180,11 @@ def main():
 				else:
 					print("Day of the week not found!")
 			
-			flag = 0
+			flag = 0'''
 			while flag == 0:
-				time_day = input("Please enter the time of the day, ex: 17:30")
+				time_day = input("Please enter the time of the day (ex. 17:30): ")
 				temp = time_day.split(':')
-				
+				print(temp)
 				if len(temp) != 2:
 					print("Please enter time in the proper format!")
 					hour = int(temp[0]) * 60
@@ -202,7 +201,7 @@ def main():
 			flag = 0
 			while flag == 0:
 				seasons = [0,0,0,0]
-				season_input = input("Please enter the season:\n1:Summer\n2:Fall\n3:Winter\n4:Spring")
+				season_input = input("Please enter the season:\n1:Summer\n2:Fall\n3:Winter\n4:Spring\n")
 				season_input = int(season_input)
 				
 				if season_input in season:

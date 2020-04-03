@@ -107,6 +107,7 @@ class LSTMModel:
 		return test_output
 	
 	def predict(self, x_data):
+		test_output = 0
 		if self.multi_model:
 			try:
 				test_output = self.model[self.intersections.index(x_data[0][0])].predict(x_data)

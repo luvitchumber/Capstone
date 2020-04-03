@@ -109,12 +109,12 @@ class LSTMModel:
 	def predict(self, x_data):
 		test_output = 0
 		if self.multi_model:
-			try:
+			#try:
 				print(self.intersections)
 				print(str(x_data[0][0]))
 				test_output = self.model[self.intersections.index(str(x_data[0][0]))].predict(x_data)
-			except:
-				print("Model for intersection does not exist!")
+			#except:
+			#	print("Model for intersection does not exist!")
 		else:
 			test_output = self.model.predict(x_data)
 		return test_output

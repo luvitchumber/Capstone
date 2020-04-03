@@ -21,12 +21,11 @@ def main():
 	intersection_list = []
 	
 	for i in range(len(intersections)):
-		intersection_list.append(intersections[i]['name'][1:])
+		intersection_list.append(intersections[i]['name'])
 		
 	#we need a way to choose which intersection is selected. please edit
-	# also there is a blank line at the beginning of the file path causing an error
 	# when selecting from intersections
-	#sel_intersection = intersections[0]['name'][1:]
+	#sel_intersection = intersections[0]['name']
 	sel_intersection = "4589"
 
 	df = get_dataset(sel_intersection, intersections)

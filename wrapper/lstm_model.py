@@ -18,8 +18,10 @@ class LSTMModel:
 		self.epochs = num_epochs
 		self.l_rate = l_rate
 		self.batch_size = batch_size
-		self.intersections = intersection_list
 		if intersection_list:
+			self.intersections = []
+			for i in range(len(intersection_list)): 
+				self.intersections.append(int(intersection_list[i]))
 			self.multi_model = True
 			load_model()
 			

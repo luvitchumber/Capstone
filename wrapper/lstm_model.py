@@ -43,7 +43,7 @@ class LSTMModel:
 
 	def load_network(self, filepath=''):
 		if self.multi_model:
-			for i in self.intersections
+			for i in self.intersections:
 				self.model.append(load_model("./model/" + i + ".hdf"))
 		else:
 			self.model = load_model(filepath, compile=True)
@@ -81,7 +81,7 @@ class LSTMModel:
 	def get_accuracy(self, x_data, y_data, verbose=False):
 		if self.multi_model:
 			try:
-				test_output = self.model[self.intersection_list.index(x_data[0][0])].predict(x_data)
+				test_output = self.model[self.intersections.index(x_data[0][0])].predict(x_data)
 			except:
 				print("Model for intersection does not exist!")
 		else:
@@ -108,7 +108,7 @@ class LSTMModel:
 	def predict(self, x_data):
 		if self.multi_model:
 			try:
-				test_output = self.model[self.intersection_list.index(x_data[0][0])].predict(x_data)
+				test_output = self.model[self.intersections.index(x_data[0][0])].predict(x_data)
 			except:
 				print("Model for intersection does not exist!")
 		else:

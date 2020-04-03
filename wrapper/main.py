@@ -212,5 +212,6 @@ def main():
 					
 			res = model.predict([x_data])
 			print("Prediction: " + str(res))
+			sleep(10)
 			
 main()

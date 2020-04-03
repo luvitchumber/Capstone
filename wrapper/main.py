@@ -156,7 +156,7 @@ def main():
 			flag = 0
 			while flag == 0:
 				num_inter = input("Please enter intersection number:")
-				
+				print(sel_intersection)
 				if num_inter in sel_intersection:
 					flag = 1
 					x_data.append(int(num_inter))

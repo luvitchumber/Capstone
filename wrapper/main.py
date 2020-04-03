@@ -184,7 +184,7 @@ def main():
 			while flag == 0:
 				time_day = input("Please enter the time of the day (ex. 17:30): ")
 				temp = time_day.split(':')
-				if len(temp) != 2:
+				if len(temp) == 2:
 					hour = int(temp[0]) * 60
 					time = hour + int(temp[1])
 					time_d = double(time) / double(1440)

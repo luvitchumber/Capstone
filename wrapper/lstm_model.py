@@ -4,7 +4,7 @@ from keras.callbacks import ModelCheckpoint
 from keras.optimizers import Adam
 
 # steps depends on amount of data to be predicted
-class LstmModel:
+class LSTMModel:
   def __init__(self, num_epochs, lrate, batch_size):
     steps = y_train.shape[1]
     self.current_idx = 0

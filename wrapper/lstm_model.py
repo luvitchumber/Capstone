@@ -46,7 +46,7 @@ class LSTMModel:
 	def load_network(self, filepath=''):
 		if self.multi_model:
 			for i in self.intersections:
-				self.model.append(load_model("./model/" + i + ".hdf"))
+				self.models.append(load_model("./model/" + i + ".hdf", compile=True))
 		else:
 			self.model = load_model(filepath, compile=True)
 	

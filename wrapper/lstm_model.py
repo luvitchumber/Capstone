@@ -19,9 +19,7 @@ class LSTMModel:
 		self.l_rate = l_rate
 		self.batch_size = batch_size
 		if intersection_list:
-			self.intersections = []
-			for i in range(len(intersection_list)): 
-				self.intersections.append(int(intersection_list[i]))
+			self.intersections=intersection_list
 			self.multi_model = True
 			self.load_network()
 			

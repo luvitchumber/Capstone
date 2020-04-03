@@ -155,7 +155,7 @@ def main():
 			time_str = ''
 			flag = 0
 			while flag == 0:
-				num_inter = raw_input("Please enter intersection number:")
+				num_inter = input("Please enter intersection number:")
 				num_inter = int(num_inter)
 				if num in sel_intersection:
 					flag = 1
@@ -166,7 +166,7 @@ def main():
 			flag = 0
 			while flag == 0:
 				week = [0,0,0,0,0,0,0]
-				num_day = raw_input("Please enter the day of the week:\nOptions:\n1:Sunday\n2:Monday\n3:Tuesday\n4:Wednesday\n5:Thursday\n6:Friay\n7:Saturday")
+				num_day = input("Please enter the day of the week:\nOptions:\n1:Sunday\n2:Monday\n3:Tuesday\n4:Wednesday\n5:Thursday\n6:Friay\n7:Saturday")
 				num_day = int(num_day)
 				if num in day_week:
 					flag = 1
@@ -177,7 +177,7 @@ def main():
 			
 			flag = 0
 			while flag == 0:
-				time_day = raw_input("Please enter the time of the day, ex: 17:30")
+				time_day = input("Please enter the time of the day, ex: 17:30")
 				temp = time_day.split(':')
 				
 				if temp.length() != 2:
@@ -196,7 +196,7 @@ def main():
 			flag = 0
 			while flag == 0:
 				seasons = [0,0,0,0]
-				season_input = raw_input("Please enter the season:\n1:Summer\n2:Fall\n3:Winter\n4:Spring")
+				season_input = input("Please enter the season:\n1:Summer\n2:Fall\n3:Winter\n4:Spring")
 				season_input = int(season_input)
 				
 				if season_input in season:

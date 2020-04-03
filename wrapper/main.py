@@ -11,8 +11,7 @@ import sys
 def get_dataset(sel_intersection, intersections):
 	intersection_file = search(intersections, 'name', sel_intersection)
 	intersection_file = intersections[intersection_file]['dataset']
-	# there is a blank line at the beginning of the file path causing an error
-	df = pd.read_csv(intersection_file[1:])
+	df = pd.read_csv(intersection_file)
 	return df
 
 
@@ -22,10 +21,12 @@ def main():
 	intersection_list = []
 	
 	for i in range(len(intersections)):
-		intersection_list.append(intersections[i]['name'])
+		intersection_list.append(intersections[i]['name'][1:])
 		
 	#we need a way to choose which intersection is selected. please edit
-	#sel_intersection = intersections[0]['name']
+	# also there is a blank line at the beginning of the file path causing an error
+	# when selecting from intersections
+	#sel_intersection = intersections[0]['name'][1:]
 	sel_intersection = "4589"
 
 	df = get_dataset(sel_intersection, intersections)

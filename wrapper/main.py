@@ -21,7 +21,7 @@ def main():
 	intersections = read_intersections("intersections.data")
 	intersection_list = []
 	
-	for i in intersections:
+	for i in range(len(intersections)):
 		intersection_list.append(intersections[i]['name'])
 		
 	#we need a way to choose which intersection is selected. please edit
@@ -186,7 +186,7 @@ def main():
 				time_day = input("Please enter the time of the day, ex: 17:30")
 				temp = time_day.split(':')
 				
-				if temp.length() != 2:
+				if len(temp) != 2:
 					print("Please enter time in the proper format!")
 					hour = int(temp[0]) * 60
 					time = hour + int(temp[1])

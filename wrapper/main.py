@@ -157,7 +157,7 @@ def main():
 			while flag == 0:
 				num_inter = input("Please enter intersection number:")
 				num_inter = int(num_inter)
-				if num in sel_intersection:
+				if num_inter in sel_intersection:
 					flag = 1
 					x_data.append(num_inter)
 				else:
@@ -168,7 +168,7 @@ def main():
 				week = [0,0,0,0,0,0,0]
 				num_day = input("Please enter the day of the week:\nOptions:\n1:Sunday\n2:Monday\n3:Tuesday\n4:Wednesday\n5:Thursday\n6:Friay\n7:Saturday")
 				num_day = int(num_day)
-				if num in day_week:
+				if num_day in day_week:
 					flag = 1
 					week[num_day-1] = 1
 					x_data = x_data + week

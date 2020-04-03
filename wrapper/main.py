@@ -19,7 +19,13 @@ def get_dataset(sel_intersection, intersections):
 def main():
 	"""Program execution starts here."""
 	intersections = read_intersections("intersections.data")
-	sel_intersection = intersections[0]['name']
+	intersection_list = []
+	
+	for i in intersections:
+		intersection_list.append(intersections[i]['name'])
+		
+	#we need a way to choose which intersection is selected. please edit
+	#sel_intersection = intersections[0]['name']
 	#sel_intersection = "4589"
 
 	df = get_dataset(sel_intersection, intersections)
@@ -140,7 +146,7 @@ def main():
 
 		elif choice == 4:
 			# Test Intersections
-			model = LSTMModel(x_train.shape[1], y_train.shape[1], sel_intersection)
+			model = LSTMModel(x_train.shape[1], y_train.shape[1], intersection_list)
 			if os.path.exists(model_file):
 				test_output = model.get_accuracy(x_test, y_test)
 				N, S, E, W = confusion_matrix(test_output, y_test, True)
@@ -157,7 +163,7 @@ def main():
 			while flag == 0:
 				num_inter = input("Please enter intersection number:")
 				print(sel_intersection)
-				if num_inter in sel_intersection:
+				if num_inter in intersection_list:
 					flag = 1
 					x_data.append(int(num_inter))
 				else:

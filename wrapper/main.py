@@ -187,7 +187,7 @@ def main():
 				if len(temp) == 2:
 					hour = int(temp[0]) * 60
 					time = hour + int(temp[1])
-					time_d = double(time) / double(1440)
+					time_d = float(time) / float(1440)
 					if time_d > 1.0:
 						print("Please enter time in the proper format!")
 					else:

@@ -159,8 +159,8 @@ def main():
 			day_week = [1,2,3,4,5,6,7]
 			season=[1,2,3,4]
 			time_str = ''
-			'''flag = 0
-			while flag == 0:
+			flag = 0
+			'''while flag == 0:
 				num_inter = input("Please enter intersection number: ")
 				if num_inter in intersection_list:
 					flag = 1

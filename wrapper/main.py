@@ -154,7 +154,7 @@ def main():
 				print("Please train intersection first")
 
 		elif choice == 5:
-		model = LSTMModel(x_train.shape[1], y_train.shape[1], intersection_list)
+			model = LSTMModel(x_train.shape[1], y_train.shape[1], intersection_list)
 			# Route Check
 			x_data = []
 			day_week = [1,2,3,4,5,6,7]

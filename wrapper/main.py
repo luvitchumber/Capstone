@@ -209,7 +209,7 @@ def main():
 				else:
 					print("Season not found!")
 					
-			res = model.predict([x_data])
+			res = model.predict([[x_data]])
 			print("Prediction: " + str(res))
 			sleep(10)
 			

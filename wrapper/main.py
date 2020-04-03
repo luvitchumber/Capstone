@@ -6,8 +6,6 @@ import os.path
 import menu
 import re
 import sys
-#**** remove time import
-import time
 
 def get_dataset(sel_intersection, intersections):
 	intersection_file = search(intersections, 'name', sel_intersection)

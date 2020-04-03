@@ -1,4 +1,4 @@
-import tensorflow.compat.v1.keras as keras
+import tensorflow.keras as keras
 from keras.models import Sequential, load_model, save_model
 from keras.layers import TimeDistributed, Dense, LSTM, Activation, RepeatVector, Dropout
 from keras.callbacks import ModelCheckpoint
@@ -44,9 +44,9 @@ class LSTMModel:
 	def load_network(self, filepath=''):
 		if self.multi_model:
 			for i in self.intersections:
-				self.models.append(load_model("./model/" + i + ".hdf"))
+				self.models.append(tf.keras.load_model("./model/" + i + ".hdf"))
 		else:
-			self.model = load_model(filepath, compile=True)
+			self.model = tf.keras.load_model(filepath, compile=True)
 	
 	def init_network(self, hidden_size, activation='relu', optimizer='adam', loss='mean_squared_error', verbose=False):
 		model = Sequential()

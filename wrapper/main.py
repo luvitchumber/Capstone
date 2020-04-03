@@ -146,7 +146,7 @@ def main():
 
 		elif choice == 4:
 			# Test Intersections
-			model = LSTMModel(x_train.shape[1], y_train.shape[1], intersection_list)
+			model = LSTMModel(x_train.shape[1], y_train.shape[1])
 			if os.path.exists(model_file):
 				test_output = model.get_accuracy(x_test, y_test)
 				N, S, E, W = confusion_matrix(test_output, y_test, True)
@@ -154,6 +154,7 @@ def main():
 				print("Please train intersection first")
 
 		elif choice == 5:
+		model = LSTMModel(x_train.shape[1], y_train.shape[1], intersection_list)
 			# Route Check
 			x_data = []
 			day_week = [1,2,3,4,5,6,7]

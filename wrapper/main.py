@@ -26,7 +26,7 @@ def main():
 		
 	#we need a way to choose which intersection is selected. please edit
 	#sel_intersection = intersections[0]['name']
-	#sel_intersection = "4589"
+	sel_intersection = "4589"
 
 	df = get_dataset(sel_intersection, intersections)
 	x_train, x_test, y_train, y_test = preprocessing(df)

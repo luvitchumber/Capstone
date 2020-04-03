@@ -10,7 +10,7 @@ import re
 def get_dataset(sel_intersection, intersections):
 	intersection_file = search(intersections, 'name', sel_intersection)
 	intersection_file = intersections[intersection_file]['dataset']
-	df = pd.read_csv(intersection_file)
+	df = pd.read_csv('./'+intersection_file)
 	return df
 
 

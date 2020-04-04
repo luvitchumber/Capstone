@@ -120,5 +120,7 @@ class LSTMModel:
 				print("Model for intersection does not exist!")
 		else:
 			test_output = self.model.predict(x_data)
+			print(test_output)
 			test_output = np.round(test_output, 0).astype(int)
+			print(test_output)
 		return test_output

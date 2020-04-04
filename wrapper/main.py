@@ -162,7 +162,7 @@ def main():
 			flag = 0
 			x_data = [4589, 1, 0, 0, 0, 0, 0, 0, 0.7291666666666666, 1, 0, 0, 0, 0, 0]
 			print(len(x_data))
-			'''while flag == 0:
+			while flag == 0:
 				num_inter = input("Please enter intersection number: ")
 				if num_inter in intersection_list:
 					flag = 1
@@ -209,7 +209,7 @@ def main():
 					seasons[season_input-1] = 1
 					x_data = x_data + seasons
 				else:
-					print("Season not found!")'''
+					print("Season not found!")
 			
 			x_test = np.array([x_data])
 			x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))

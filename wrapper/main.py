@@ -210,7 +210,7 @@ def main():
 				else:
 					print("Season not found!")'''
 			
-			x_test = pd.DataFrame(x_data)
+			x_test = np.array(x_data)
 			print(x_test)
 			x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
 			res = model.predict(x_data)

@@ -37,7 +37,7 @@ def main():
 		"List of Intersections",
 		"Train Intersection",
 		"Test Intersection (Accuracy)",
-		"Route Check (Not Implemented Yet)"
+		"Route Check"
 	]
 	train_menu = [
 		"Train Mode:",

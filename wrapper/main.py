@@ -160,7 +160,7 @@ def main():
 			season=[1,2,3,4]
 			time_str = ''
 			flag = 0
-			x_data = [[4589, 1, 0, 0, 0, 0, 0, 0, 0.7291666666666666, 1, 0, 0, 0], [4589, 1, 0, 0, 0, 0, 0, 0, 0.7291666666666666, 1, 0, 0, 0]]
+			x_data = [4589, 1, 0, 0, 0, 0, 0, 0, 0.7291666666666666, 1, 0, 0, 0]
 			'''while flag == 0:
 				num_inter = input("Please enter intersection number: ")
 				if num_inter in intersection_list:
@@ -210,7 +210,7 @@ def main():
 				else:
 					print("Season not found!")'''
 			
-			x_test = np.array(x_data)
+			x_test = np.array([x_data])
 			print(x_test)
 			x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
 			res = model.predict(x_data)

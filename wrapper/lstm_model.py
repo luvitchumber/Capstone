@@ -47,7 +47,7 @@ class LSTMModel:
 		else:
 			self.model = load_model(filepath, compile=True)
 	
-	def init_network(self, hidden_size, activation='relu', optimizer='adam', loss='mean_squared_error', verbose=False):
+	def init_network(self, hidden_size, activation='softmax', optimizer='adam', loss='mean_squared_error', verbose=False):
 		model = Sequential()
 		model.add(LSTM(units=hidden_size, return_sequences=True, input_shape=(self.input_length, 1)))
 		model.add(LSTM(units=hidden_size, return_sequences=True))

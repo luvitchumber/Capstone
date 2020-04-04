@@ -161,6 +161,7 @@ def main():
 			time_str = ''
 			flag = 0
 			x_data = []
+			peak = 0
 
 			while flag == 0:
 				num_inter = input("Please enter intersection number: ")
@@ -188,6 +189,8 @@ def main():
 				temp = time_day.split(':')
 				if len(temp) == 2:
 					hour = int(temp[0]) * 60
+					if hour > 9 and hour < 17:
+						peak = 1
 					time = hour + int(temp[1])
 					time_d = float(time) / float(1440)
 					if time_d > 1.0:
@@ -212,6 +215,7 @@ def main():
 					print("Season not found!")
 			
 			# add [0,0] for events
+			x_data.append(peak)
 			x_test = np.array([x_data] + [0,0])
 			x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
 			res = model.predict(x_test)

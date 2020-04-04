@@ -216,7 +216,8 @@ def main():
 			
 			# add [0,0] for events
 			x_data.append(peak)
-			x_test = np.array([x_data] + [0,0])
+			x_data = x_data + [0,0]
+			x_test = np.array([x_data])
 			x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
 			res = model.predict(x_test)
 			print("Prediction: " + str(res))

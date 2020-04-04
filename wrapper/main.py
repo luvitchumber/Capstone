@@ -22,8 +22,6 @@ def main():
 	for i in range(len(intersections)):
 		intersection_list.append(intersections[i]['name'].strip(' '))
 		
-	#we need a way to choose which intersection is selected. please edit
-	# when selecting from intersections
 	#sel_intersection = intersections[0]['name']
 	sel_intersection = "4589"
 
@@ -161,7 +159,7 @@ def main():
 			time_str = ''
 			flag = 0
 			x_data = []
-			print(len(x_data))
+
 			while flag == 0:
 				num_inter = input("Please enter intersection number: ")
 				if num_inter in intersection_list:
@@ -211,7 +209,8 @@ def main():
 				else:
 					print("Season not found!")
 			
-			x_test = np.array([x_data])
+			# add [0,0] for events
+			x_test = np.array([x_data] + [0,0])
 			x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
 			res = model.predict(x_test)
 			print("Prediction: " + str(res))

@@ -143,9 +143,10 @@ def main():
 
 		elif choice == 4:
 			# Test Intersections
-			print("blah" + str(model_file))
+			model_file = "model/" + sel_intersection + ".hdf"
 			model = LSTMModel(x_train.shape[1], y_train.shape[1])
 			if os.path.exists(model_file):
+				model.load_network(model_file)
 				test_output = model.get_accuracy(x_test, y_test)
 				N, S, E, W = confusion_matrix(test_output, y_test, True)
 			else:

@@ -160,7 +160,8 @@ def main():
 			season=[1,2,3,4]
 			time_str = ''
 			flag = 0
-			x_data = [4589, 1, 0, 0, 0, 0, 0, 0, 0.7291666666666666, 1, 0, 0, 0]
+			x_data = [4589, 1, 0, 0, 0, 0, 0, 0, 0.7291666666666666, 1, 0, 0, 0, 0, 0]
+			print(len(data))
 			'''while flag == 0:
 				num_inter = input("Please enter intersection number: ")
 				if num_inter in intersection_list:

@@ -1,9 +1,9 @@
 import tensorflow
-from tensorflow import keras as keras
-from keras.models import Sequential, load_model, save_model
-from keras.layers import TimeDistributed, Dense, LSTM, Activation, RepeatVector, Dropout
-from keras.callbacks import ModelCheckpoint
-from keras.utils import  to_categorical
+from tensorflow import keras as keras_
+from keras_.models import Sequential, load_model, save_model
+from keras_.layers import TimeDistributed, Dense, LSTM, Activation, RepeatVector, Dropout
+from keras_.callbacks import ModelCheckpoint
+from keras_.utils import  to_categorical
 import numpy as np
 
 

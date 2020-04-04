@@ -106,19 +106,19 @@ class LSTMModel:
 					print("Prediction:", pred)
 
 		res = corr / (corr + incorr) * 100
-		print(f"Accuracy rate: {res}")
+		print("Accuracy rate: {res}")
 		return test_output
 	
 	def predict(self, x_data):
 		test_output = 0
 		if self.multi_model:
-			#try:
+			try:
 				print(self.intersections)
 				print(str(x_data[0][0]))
 				test_output = self.models[self.intersections.index(str(int(x_data[0][0][0])))].predict(x_data)
-			#except:
-			#	print("Model for intersection does not exist!")
+			except:
+				print("Model for intersection does not exist!")
 		else:
 			test_output = self.model.predict(x_data)
-			test_output = np.around(test_output).astype(int)
+			test_output = np.around(test_output[0], 0).astype(int)
 		return test_output

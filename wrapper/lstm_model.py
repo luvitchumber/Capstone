@@ -108,11 +108,11 @@ class LSTMModel:
 		print("Accuracy rate: {res}")
 		return test_output
 	
-	def predict(self, x_data):
+	def predict(self, x_data, intersection=0):
 		test_output = 0
 		if self.multi_model:
 			try:
-				test_output = self.models[self.intersections.index(str(int(x_data[0][0][0])))].predict(x_data)
+				test_output = self.models[self.intersections.index(str(intersection))].predict(x_data)
 			except:
 				print("Model for intersection does not exist!")
 		else:

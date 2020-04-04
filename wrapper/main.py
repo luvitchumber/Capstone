@@ -168,7 +168,8 @@ def main():
 				num_inter = input("Please enter intersection number: ")
 				if num_inter in intersection_list:
 					flag = 1
-					x_data.append(int(num_inter))
+					num_inter = int(num_inter)
+					#x_data.append(int(num_inter))
 				else:
 					print("Intersection not found!")
 					
@@ -220,7 +221,7 @@ def main():
 			x_data = x_data + [0,0]
 			x_test = np.array([x_data])
 			x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
-			res = model.predict(x_test)
+			res = model.predict(x_test, num_inter)
 			print("Prediction: " + str(res))
 			#sleep(10)
 			

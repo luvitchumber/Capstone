@@ -168,7 +168,7 @@ def main():
 				num_inter = input("Please enter intersection number: ")
 				if num_inter in intersection_list:
 					flag = 1
-					#x_data.append(int(num_inter))
+					x_data.append(int(num_inter))
 				else:
 					print("Intersection not found!")
 					

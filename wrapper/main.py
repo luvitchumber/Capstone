@@ -143,6 +143,7 @@ def main():
 
 		elif choice == 4:
 			# Test Intersections
+			print(model_file)
 			model = LSTMModel(x_train.shape[1], y_train.shape[1])
 			if os.path.exists(model_file):
 				test_output = model.get_accuracy(x_test, y_test)

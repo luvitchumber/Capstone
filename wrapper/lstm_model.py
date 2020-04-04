@@ -1,5 +1,5 @@
-#from tensorflow import keras as keras
-#import tensorflow
+from tensorflow import keras as keras
+import tensorflow
 from keras.models import Sequential, load_model, save_model
 from keras.layers import TimeDistributed, Dense, LSTM, Activation, RepeatVector, Dropout
 from keras.callbacks import ModelCheckpoint
@@ -45,11 +45,12 @@ class LSTMModel:
 	def load_network(self, filepath=''):
 		if self.multi_model:
 			for i in self.intersections:
-				#self.models.append(tensorflow.keras.models.load_model("./model/" + i + ".hdf"))
-				self.models.append(load_model("./model/" + i + ".hdf"))
+				self.models.append(tensorflow.keras.models.load_model("./model/" + i + ".hdf"))
+				#self.models.append(load_model("./model/" + i + ".hdf"))
 		else:
-			self.model = load_model(filepath, compile=True)
-	
+			#self.model = load_model(filepath, compile=True)
+			self.model = tensorflow.keras.models.load_model(filepath, compile=True)
+		
 	def init_network(self, hidden_size, activation='softmax', optimizer='adam', loss='mean_squared_error', verbose=False):
 		model = Sequential()
 		model.add(LSTM(units=hidden_size, return_sequences=True, input_shape=(self.input_length, 1)))
@@ -110,10 +111,10 @@ class LSTMModel:
 	def predict(self, x_data):
 		test_output = 0
 		if self.multi_model:
-			#try:
+			try:
 				test_output = self.models[self.intersections.index(str(int(x_data[0][0][0])))].predict(x_data)
-			#except:
-			#	print("Model for intersection does not exist!")
+			except:
+				print("Model for intersection does not exist!")
 		else:
 			test_output = self.model.predict(x_data)
 		test_output = np.around(test_output, 0).astype(int)

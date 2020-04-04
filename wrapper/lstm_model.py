@@ -1,4 +1,5 @@
 from tensorflow import keras as keras
+import tensorflow
 from keras.models import Sequential, load_model, save_model
 from keras.layers import TimeDistributed, Dense, LSTM, Activation, RepeatVector, Dropout
 from keras.callbacks import ModelCheckpoint

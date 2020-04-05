@@ -141,7 +141,7 @@ def main():
 				model.epochs = e
 			except ValueError:
 				print("Invalid number entered, using default value")
-			model.train(x_train, y_train, model_file)
+			model.train(x_train, y_train, './'+ model_file)
 
 			intersections[intersection_idx]['model'] = model_file
 			save_intersections(intersections, "intersections.data")

@@ -3,8 +3,8 @@ from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 
 sc = MinMaxScaler(feature_range=(0, 1))
-features_idx_events =   [6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, 26, 27]
-print(features_idx_events)
+#features_idx_events =   [6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, 26, 27]
+features_idx_events =   [6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, -2, -1]
 features_idx =		  [6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20]
 labels_idx = [-13, -12, -11, -10]
 

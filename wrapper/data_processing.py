@@ -10,7 +10,7 @@ features_idx =		  [6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20]
 labels_idx = [21, 22, 23, 24]
 
 
-def preprocessing(df, events=True, verbose=False):
+def preprocessing(df, events=False, verbose=False):
 	features = df.iloc[:, features_idx]
 	labels = df.iloc[:, labels_idx]
 	if events:

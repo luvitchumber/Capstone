@@ -9,7 +9,7 @@ import re
 import sys
 
 def get_dataset(sel_intersection, intersections):
-	print("blah " + str(intersection_file))
+	print("blah " + str(sel_intersection))
 	print(intersections)
 	intersection_file = search(intersections, 'name', sel_intersection)
 	intersection_file = intersections[intersection_file]['dataset']

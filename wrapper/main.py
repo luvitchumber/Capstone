@@ -85,7 +85,11 @@ def main():
 				model_file = search(intersections, 'name', sel_intersection)
 				if model_file is not None:
 					model_file = intersections[model_file]['model']
-					model.load_network('./model/'+str(sel_intersection)+'.hdf')
+					try:
+						model.load_network('./model/'+str(sel_intersection)+'.hdf')
+					except:
+						print("File for loading model is not found! Creating a new model from scratch")
+						model.init_network(hidden_size=50)
 
 		elif choice == 2:
 			# List Intersections

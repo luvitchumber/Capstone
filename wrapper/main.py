@@ -80,6 +80,8 @@ def main():
 
 				model = LSTMModel(x_train.shape[1], y_train.shape[1])
 				print("&&&&&" + sel_intersection)
+				print(intersections)
+				print("!!!!!!!!!!")
 				model_file = search(intersections, 'name', sel_intersection)
 				if model_file is not None:
 					model_file = intersections[model_file]['model']

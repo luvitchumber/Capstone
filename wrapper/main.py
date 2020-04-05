@@ -82,6 +82,7 @@ def main():
 				model_file = search(intersections, 'name', sel_intersection)
 				if model_file is not None:
 					model_file = intersections[model_file]['model']
+					print("*****" + model_file)
 					model.load_network(model_file)
 
 		elif choice == 2:

@@ -82,6 +82,7 @@ class LSTMModel:
 		if self.multi_model:
 			print("Training is not possible with multi model mode!")
 		else:
+			print(x_train[0][0])
 			self.model.fit(x_train, y_train, epochs=self.epochs, batch_size=self.batch_size,
 					   validation_split=validation_split, callbacks=callbacks_list)
 		if save:

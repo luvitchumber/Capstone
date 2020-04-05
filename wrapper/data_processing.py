@@ -118,7 +118,7 @@ def read_intersections(file_loc, verbose=False):
     intersections = list()
     f = open(file_loc, "r")
 
-    keys = f.readline().rstrip('\n').split(',')
+    keys = f.readlines().rstrip('\n').split(',')
     if verbose:
         print("Keys:", keys)
         print("Intersections Data:")

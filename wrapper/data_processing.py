@@ -117,8 +117,10 @@ def confusion_matrix(predict, actual, Verbose=False):
 def read_intersections(file_loc, verbose=False):
     intersections = list()
     f = open(file_loc, "r")
-
-    keys = f.readlines().strip('\n').split(',')
+	lines = f.readlines()
+    keys = []
+	for line in lines:
+		keys.append(line.rstrip('\n').split(','))
     if verbose:
         print("Keys:", keys)
         print("Intersections Data:")

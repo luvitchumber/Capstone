@@ -77,12 +77,13 @@ class LSTMModel:
 
 
 	def train(self, x_train, y_train, file_loc, validation_split=0.2, save=True):
+		x_train = np.asarray(x_train)
+		y_train = np.asarray(y_train)
 		check_pointer = ModelCheckpoint(filepath=file_loc, verbose=1)
 		callbacks_list = [check_pointer]
 		if self.multi_model:
 			print("Training is not possible with multi model mode!")
 		else:
-			print(x_train[0])
 			self.model.fit(x_train, y_train, epochs=self.epochs, batch_size=self.batch_size,
 					   validation_split=validation_split, callbacks=callbacks_list)
 		if save:

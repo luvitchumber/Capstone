@@ -9,8 +9,6 @@ import re
 import sys
 
 def get_dataset(sel_intersection, intersections):
-	print("blah " + str(sel_intersection))
-	print(intersections)
 	intersection_file = search(intersections, 'name', sel_intersection)
 	intersection_file = intersections[intersection_file]['dataset']
 	df = pd.read_csv(intersection_file.strip(' '))
@@ -80,8 +78,6 @@ def main():
 				df = get_dataset(sel_intersection, intersections)
 				x_train, x_test, y_train, y_test = preprocessing(df)
 
-				model = LSTMModel(x_train.shape[1], y_train.shape[1])
-				print("&&&&&" + sel_intersection)
 				model_file = search(intersections, 'name', sel_intersection)
 				if model_file is not None:
 					model_file = intersections[model_file]['model']

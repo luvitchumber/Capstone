@@ -79,6 +79,7 @@ def main():
 				x_train, x_test, y_train, y_test = preprocessing(df)
 
 				model = LSTMModel(x_train.shape[1], y_train.shape[1])
+				print("&&&&&" + sel_intersection)
 				model_file = search(intersections, 'name', sel_intersection)
 				if model_file is not None:
 					model_file = intersections[model_file]['model']

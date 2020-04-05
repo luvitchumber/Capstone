@@ -55,12 +55,10 @@ class LSTMModel:
 		print(filepath)
 		if self.multi_model:
 			for i in self.intersections:
-				self.models.append(tensorflow.keras.models.load_model("./model/" + i + ".hdf"))
-				#self.models.append(load_model("./model/" + i + ".hdf"))
+				self.models.append(load_model("./model/" + i + ".hdf"))
 		else:
-			#self.model = load_model(filepath, compile=True)
-			self.model = tensorflow.keras.models.load_model(filepath, compile=True)
-		
+			self.model = load_model(filepath, compile=True)
+			
 	def init_network(self, hidden_size, activation='relu', optimizer='adam', loss='mean_squared_error', verbose=False):
 		model = Sequential()
 		model.add(LSTM(units=hidden_size, return_sequences=True, input_shape=(self.input_length, 1)))

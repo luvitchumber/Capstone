@@ -60,6 +60,7 @@ def main():
 	while True:
 		print("Currently Selected Intersection:", sel_intersection)
 		choice = menu.do_menu(main_menu)
+		model = LSTMModel(x_train.shape[1], y_train.shape[1])
 		if choice is None:
 			return  # Exit main() (and program).
 		if choice == 1:
@@ -81,11 +82,11 @@ def main():
 				model_file = search(intersections, 'name', sel_intersection)
 				if model_file is not None:
 					model_file = intersections[model_file]['model']
-					try:
-						model.load_network('./model/'+str(sel_intersection)+'.hdf')
-					except:
-						print("File for loading model is not found! Creating a new model from scratch")
-						model.init_network(hidden_size=50)
+					#try:
+					model.load_network('./model/'+str(sel_intersection)+'.hdf')
+					#except:
+					#	print("File for loading model is not found! Creating a new model from scratch")
+					#	model.init_network(hidden_size=50)
 
 		elif choice == 2:
 			# List Intersections

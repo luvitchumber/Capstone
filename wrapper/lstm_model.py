@@ -77,8 +77,8 @@ class LSTMModel:
 
 
 	def train(self, x_train, y_train, file_loc, validation_split=0.2, save=True):
-		x_train = np.asarray(x_train)
-		y_train = np.asarray(y_train)
+		x_train = np.asarray(x_train).astype(np.float32)
+		y_train = np.asarray(y_train).astype(np.float32)
 		check_pointer = ModelCheckpoint(filepath=file_loc, verbose=1)
 		callbacks_list = [check_pointer]
 		if self.multi_model:

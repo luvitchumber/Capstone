@@ -3,14 +3,14 @@ from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 
 sc = MinMaxScaler(feature_range=(0, 1))
-#features_idx_events =   [6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, 26, 27]
-features_idx_events =   [6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, -2, -1]
+features_idx_events =   [6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, 26, 27]
+#features_idx_events =   [6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, -2, -1]
 features_idx =		  [6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20]
-#labels_idx = [-13, -12, -11, -10]
-labels_idx = [21, 22, 23, 24]
+labels_idx = [-13, -12, -11, -10]
+#labels_idx = [21, 22, 23, 24]
 
 
-def preprocessing(df, events=False, verbose=False):
+def preprocessing(df, events=True, verbose=False):
 	features = df.iloc[:, features_idx]
 	labels = df.iloc[:, labels_idx]
 	if events:

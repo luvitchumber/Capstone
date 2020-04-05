@@ -103,7 +103,7 @@ def main():
 				intersection_idx = search(intersections, 'name', sel_intersection)
 				model_file = "model/" + sel_intersection + ".hdf"
 				if os.path.exists(model_file):
-					os.remove(model_file)
+					#os.remove(model_file)
 				model.init_network(hidden_size=50)
 			elif choice == 2:
 				x_train, x_test, y_train, y_test = preprocessing(df, events=True)

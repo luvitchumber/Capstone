@@ -30,8 +30,6 @@ def preprocessing(df, events=True, verbose=False):
 	x_test, y_test = np.array(x_test), np.array(y_test)
 	x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
 	
-	print(x_train.shape)
-	print(x_test.shape)
 	return x_train, x_test, y_train, y_test
 
 
